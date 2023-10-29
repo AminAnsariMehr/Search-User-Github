@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  /* font-family: "Poppins", sans-serif; */
+  /* font-family: "Roboto", sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url('./../img/hero-bg-e49a8e86f714.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 65%;
+  padding-bottom: 50px;
+  gap: 45px;
+}
+
+header {
+  width: 100%;
+  height: 72px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+header>.logo {
+  width: 45px;
+  height: 45px;
+  margin-left: 12px;
+}
+
+header>.logo>a>img {
+  width: 43px;
+  height: 43px;
+}
+
+header>nav {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+header>nav>ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+
+header>nav>ul>li>a {
+  text-decoration: none;
+  padding: 11px 15.1px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+}
+
+header>nav>ul>li>a:hover {
+  opacity: 0.75;
+}
+
+.inputAndButtonsWrapper {
+  height: 40px;
+  margin: 0 16px 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inputWrappers {
+  width: 310px;
+  height: 30px;
+  padding: 0 8px;
+  background-color: rgba(46, 55, 74, 0.82);
+  border: 1px solid rgb(87, 96, 106);
+  border-radius: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputWrappers>img {
+  width: 18px;
+  height: 18px;
+}
+
+.inputWrappers>p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.inputWrappers>span {
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: rgb(107, 115, 123);
+  border: 1px solid rgb(87, 96, 106);
+  border-radius: 4px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singIn,
+.signUp {
+  text-decoration: none;
+  padding: 8.5px 8px;
+  color: #fff;
+  line-height: 15px;
+  margin-left: 15px;
+}
+
+.signUp {
+  border: 0.8px solid rgb(208, 215, 222);
+  border-radius: 6px;
+  margin-left: 13px;
+}
+
+#realSearchBar {
+  position: fixed;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 110px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: none;
+  z-index: 10;
+}
+
+.searchPart,
+.syntaxTips {
+  position: relative;
+  width: 100%;
+  height: 49%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.searchPart>img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 15px;
+}
+
+.searchPart>input {
+  width: 100%;
+  height: 32px;
+  padding-left: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 6px;
+}
+
+.searchPart>input:focus {
+  border: 2px solid rgb(9, 105, 218);
+}
+
+.syntaxTips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(168, 168, 168, 0.31);
+}
+
+.syntaxTips>a {
+  text-decoration: none;
+  color: rgb(9, 105, 218);
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.syntaxTips>a:hover {
+  text-decoration: underline;
+}
+
+.syntaxTips>i {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.syntaxTips>i::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.syntaxTips>i::before {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.syntaxTips>i:hover {
+  background: #aeaeae;
+}
+
+.syntaxTips>i:hover::after,
+.syntaxTips>i:hover::before {
+  background: #000;
+}
+
+main {
+  width: 80%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.userWrapper {
+  max-width: 95%;
+  min-height: 40vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.users {
+  width: 200px;
+  height: 220px;
+  padding: 20px 0;
+  background-color: #161b22;
+  background-color: rgba(22, 27, 34, 0.8);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.users>#userName {
+  color: #dcdcdc;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.profLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.users a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  background-color: #000;
+  border-radius: 5px;
+  line-height: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.imageUser {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageUser>img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
