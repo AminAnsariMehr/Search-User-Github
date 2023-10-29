@@ -37,19 +37,19 @@ function searchInputValue(e) {
 }
 
 function fetchRequest(username) {
-  checkEmptyUserWrapper();
   fetch(`https://api.github.com/search/users?q=${username}`)
     .then((res) => res.json())
     .then((allUsers) => {
       userWrapper.innerHTML = "";
       for (let i = 0; i < allUsers.items.length; i++) {
         userWrapper.innerHTML += `
-        <div class="users">
-          <div class="imageUser"><img src=${allUsers.items[i].avatar_url}></div>
-          <p id="userName">${allUsers.items[i].login}</p>
-          <div class="profLinks">
-            <a href=${allUsers.items[i].html_url} target="_blank">More</a>
-          </div>`;
+      <div class="users">
+      <div class="imageUser"><img src=${allUsers.items[i].avatar_url}></div>
+      <p id="userName">${allUsers.items[i].login}</p>
+      <div class="profLinks">
+      <a href=${allUsers.items[i].html_url} target="_blank">More</a>
+      </div>`;
+        checkEmptyUserWrapper();
       }
     });
 }
