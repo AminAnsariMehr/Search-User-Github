@@ -150,7 +150,6 @@ header>nav>ul>li>a:hover {
   margin-left: 8px;
 }
 
-
 #realSearchBar {
   position: fixed;
   top: 3px;
@@ -259,9 +258,8 @@ header>nav>ul>li>a:hover {
 
 main {
   position: relative;
-  width: 80%;
   width: 1280px;
-  height: 100%;
+  height: 1460px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -382,12 +380,31 @@ main {
   pointer-events: none;
 }
 
+.doubleArrows {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(#dd7df78f, transparent, transparent);
+  top: 43.5%;
+  left: 53px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doubleArrows>img {
+  width: 17px;
+  height: 17px;
+}
+
 .line {
-  width: 3px;
+  width: 3.2px;
   height: 750px;
   border-radius: 10px;
   position: absolute;
-  top: 47%;
+  top: 49%;
   left: 52px;
   pointer-events: none;
   background: linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364);
@@ -428,6 +445,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 
 .gitHubUniverse>img {
@@ -456,52 +474,20 @@ main {
 }
 
 .arrow {
-  width: 25px;
-  height: 25px;
   position: relative;
+  width: 24px;
+  height: 24px;
   right: -20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  overflow: hidden;
 }
 
-.arrow>i:nth-child(1) {
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 30px;
-  top: 50%;
-  right: 0;
-  transform: translate(0, 100%) rotate(-45deg);
-}
-
-.arrow>i:nth-child(2) {
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 30px;
-  top: 50%;
-  right: 0px;
-  transform: translate(0, -100%) rotate(45deg);
-}
-
-.arrow>i:nth-child(3) {
-  position: absolute;
-  width: 20px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 30px;
-  top: 50%;
-  right: 28px;
-  transition: 0.2s;
-}
-
-.gitHubUniverse:hover i:nth-child(3) {
-  right: 3.5px;
+.arrow>img {
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
 }
 
 .mainTexts {
@@ -526,7 +512,6 @@ main {
   font-weight: 400;
   margin-bottom: 60px;
   font-family: Mona;
-
 }
 
 .emailandTrial {
@@ -536,16 +521,17 @@ main {
 }
 
 .mainTexts>.emailandTrial>input {
-  padding: 0 10px;
+  padding: 0 20px;
   width: 300px;
   height: 50px;
+  font-size: 22px;
+  font-weight: 500;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-family: Mona;
-
 }
 
 .mainTexts>.emailandTrial>input::placeholder {
@@ -568,5 +554,6 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
   background: linear-gradient(180deg, rgba(183, 52, 179, 0.15) 0%, rgba(164, 46, 156, 0) 100%), #6e40c9
 }
