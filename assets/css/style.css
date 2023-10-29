@@ -25,7 +25,7 @@
   background-image: url('./../img/hero-bg-e49a8e86f714.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 65%;
+  background-position: top center;
   padding-bottom: 50px;
   gap: 45px;
 }
@@ -89,8 +89,8 @@ header>nav>ul>li>a:hover {
 }
 
 .inputWrappers {
-  width: 310px;
-  height: 30px;
+  width: 326px;
+  height: 32px;
   padding: 0 8px;
   background-color: rgba(46, 55, 74, 0.82);
   border: 1px solid rgb(87, 96, 106);
@@ -98,12 +98,15 @@ header>nav>ul>li>a:hover {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .inputWrappers>img {
-  width: 18px;
-  height: 18px;
+  width: 18.5px;
+  height: 18.5px;
+  position: relative;
+  top: 1px;
+  left: -1px;
 }
 
 .inputWrappers>p {
@@ -137,8 +140,9 @@ header>nav>ul>li>a:hover {
 .signUp {
   border: 0.8px solid rgb(208, 215, 222);
   border-radius: 6px;
-  margin-left: 13px;
+  margin-left: 8px;
 }
+
 
 #realSearchBar {
   position: fixed;
@@ -247,25 +251,30 @@ header>nav>ul>li>a:hover {
 }
 
 main {
+  position: relative;
   width: 80%;
+  width: 1280px;
+  height: 1089px;
   /* background-color: red; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: 3;
 }
 
 .userWrapper {
-  max-width: 95%;
+  max-width: 90%;
   min-height: 40vh;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #13192e;
+  background-color: red;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  z-index: 999;
 }
 
 .users {
@@ -324,4 +333,125 @@ main {
   width: 75px;
   height: 75px;
   border-radius: 50%;
+}
+
+
+/* ------------------------  ------------------------*/
+
+.LineImage {
+  width: 437px;
+  height: 643px;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+}
+
+.satelliteImage {
+  width: 320px;
+  height: 208.7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: satellite 10s ease infinite;
+}
+
+@keyframes satellite {
+
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50% {
+    top: 3px;
+  }
+}
+
+.gitHubUniverse {
+  position: absolute;
+  top: 333px;
+  left: 108px;
+  padding: 14px 20px;
+  width: 535px;
+  height: 75px;
+  border: 0.8px solid #424b5b;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, rgba(1, 1, 1, 0.6) 0%, rgba(1, 1, 1, 0.461139) 59.76%, rgba(1, 1, 1, 0) 100%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gitHubUniverse>img {
+  width: 44px;
+  height: 44px;
+}
+
+.gitHubUniverse_Description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.gitHubUniverse_Description>span:first-child {
+  color: #fff;
+  /* font-size: 18px; */
+  font-weight: 600;
+
+}
+
+.gitHubUniverse_Description>span:nth-child(2) {
+  color: rgb(110, 118, 129);
+  font-weight: 500;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  right: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow>i:nth-child(1) {
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 30px;
+  top: 50%;
+  right: 0;
+  transform: translate(0, 100%) rotate(-45deg);
+}
+
+.arrow>i:nth-child(2) {
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 30px;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -100%) rotate(45deg);
+}
+
+.arrow>i:nth-child(3) {
+  position: absolute;
+  width: 0px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 30px;
+  top: 50%;
+  right: 3.5px;
+  transition: 0.2s;
+}
+
+.arrow:hover>i:nth-child(3) {
+  width: 20px;
 }

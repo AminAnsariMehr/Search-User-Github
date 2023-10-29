@@ -18,6 +18,7 @@ function showSearchBar() {
   checkEmptyUserWrapper();
   realSearchBar.style.display = "block";
   document.body.style.opacity = "0.9";
+  inputSearch.focus();
 }
 
 function closeSearchBar() {
