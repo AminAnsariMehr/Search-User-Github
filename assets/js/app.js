@@ -31,7 +31,7 @@ function closeSearchBar() {
 function searchInputValue(e) {
   checkEmptyUserWrapper();
   if (inputSearch.value && e.key == "Enter") {
-    const inputValue = inputSearch.value;
+    let inputValue = inputSearch.value;
     fetchRequest(inputValue);
   }
 }
@@ -49,17 +49,14 @@ function fetchRequest(username) {
       <div class="profLinks">
       <a href=${allUsers.items[i].html_url} target="_blank">More</a>
       </div>`;
-        checkEmptyUserWrapper();
       }
+      checkEmptyUserWrapper();
+      inputSearch.value = "";
     });
 }
 
 // checkEmpty userWrapper ===>>
 function checkEmptyUserWrapper() {
-  // userWrapper.innerHTML == ""
-  //   ? (userWrapper.style.padding = "0")
-  //   : (userWrapper.style.padding = "20px 30px");
-
   if (userWrapper.innerHTML == "") {
     userWrapper.style.padding = "0";
   } else {

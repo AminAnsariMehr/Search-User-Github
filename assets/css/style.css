@@ -281,13 +281,10 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   z-index: 999;
 }
 
-.userWrapper::-webkit-scrollbar {
-  width: 0;
-}
 
 .users {
   width: 200px;
