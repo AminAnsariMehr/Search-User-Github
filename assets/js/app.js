@@ -1,5 +1,3 @@
-//
-//
 const fakeSearchBar = document.getElementById("fakeSearchBar");
 const realSearchBar = document.getElementById("realSearchBar");
 const exitSearchBarBtn = document.getElementById("exitSearchBar");
@@ -10,8 +8,6 @@ const userWrapper = document.querySelector(".userWrapper");
 fakeSearchBar.addEventListener("click", showSearchBar);
 exitSearchBarBtn.addEventListener("click", closeSearchBar);
 inputSearch.addEventListener("keyup", searchInputValue);
-
-// Functions ====>
 
 // SearchBar Functions ===>
 function showSearchBar() {
@@ -41,6 +37,15 @@ function fetchRequest(username) {
     .then((res) => res.json())
     .then((allUsers) => {
       userWrapper.innerHTML = "";
+      userWrapper.innerHTML += `
+      <div id="closeUsersTab">
+      <span id="closeUsersList">&nbsp;</span>
+      <div class="arrowOpen">
+      <img src="./assets/img/RightArrow.png">
+      </div>
+      </div>
+      `;
+
       for (let i = 0; i < allUsers.items.length; i++) {
         userWrapper.innerHTML += `
       <div class="users">
@@ -50,6 +55,10 @@ function fetchRequest(username) {
       <a href=${allUsers.items[i].html_url} target="_blank">More</a>
       </div>`;
       }
+      const arrowOpen = document.querySelector(".arrowOpen");
+      const closeUserListBtn = document.getElementById("closeUsersList");
+      arrowOpen.addEventListener("click", openCloseUserTab);
+      closeUserListBtn.addEventListener("click", closeUserList);
       checkEmptyUserWrapper();
       inputSearch.value = "";
     });
@@ -57,9 +66,19 @@ function fetchRequest(username) {
 
 // checkEmpty userWrapper ===>>
 function checkEmptyUserWrapper() {
-  if (userWrapper.innerHTML == "") {
-    userWrapper.style.padding = "0";
-  } else {
-    userWrapper.style.padding = "20px 30px";
-  }
+  userWrapper.innerHTML == ""
+    ? (userWrapper.style.padding = "0")
+    : (userWrapper.style.padding = "20px 30px");
+}
+
+function openCloseUserTab() {
+  closeUsersTab.style.width = "62px";
+  closeUsersTab.style.right = "-6px";
+  closeUsersTab.querySelector(".arrowOpen").style.left = "5px";
+  closeUsersTab.querySelector(".arrowOpen").querySelector("img").src =
+    "./assets/img/BackArrow.png";
+}
+function closeUserList() {
+  userWrapper.innerHTML = "";
+  checkEmptyUserWrapper();
 }
