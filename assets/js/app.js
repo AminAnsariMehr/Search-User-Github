@@ -2,6 +2,8 @@ const fakeSearchBar = document.getElementById("fakeSearchBar");
 const realSearchBar = document.getElementById("realSearchBar");
 const exitSearchBarBtn = document.getElementById("exitSearchBar");
 const inputSearch = document.getElementById("inputSearch");
+const main = document.querySelector("main");
+const line = document.querySelector(".line");
 const userWrapper = document.querySelector(".userWrapper");
 
 //  Events ===>
@@ -69,6 +71,14 @@ function checkEmptyUserWrapper() {
   userWrapper.innerHTML == ""
     ? (userWrapper.style.padding = "0")
     : (userWrapper.style.padding = "20px 30px");
+
+  userWrapper.innerHTML == ""
+    ? (main.style.height = "1100px")
+    : (main.style.height = "1460px");
+
+  userWrapper.innerHTML == ""
+    ? (line.style.height = "390px")
+    : (line.style.height = "750px");
 }
 
 function openCloseUserTab() {

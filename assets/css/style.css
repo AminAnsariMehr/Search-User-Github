@@ -278,7 +278,7 @@ header>nav>ul>li>a:hover {
 main {
   position: relative;
   width: 1280px;
-  height: 1460px;
+  min-height: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -444,7 +444,7 @@ main {
   height: 100px;
   border-radius: 50%;
   background: radial-gradient(#dd7df78f, transparent, transparent);
-  top: 43.5%;
+  top: 625px;
   left: 53px;
   transform: translateX(-50%);
   display: flex;
@@ -459,10 +459,11 @@ main {
 
 .line {
   width: 3.2px;
-  height: 750px;
+  /* height: 750px; */
+  height: 390px;
   border-radius: 10px;
   position: absolute;
-  top: 49%;
+  top: 700px;
   left: 52px;
   pointer-events: none;
   background: linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364);
@@ -553,13 +554,14 @@ main {
   position: absolute;
   top: 428px;
   left: 110px;
+
 }
 
 .mainTexts>h1 {
   color: #fff;
   font-size: 80px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
   font-family: Mona;
 }
 
@@ -568,7 +570,7 @@ main {
   font-size: 32px;
   line-height: 44px;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
   font-family: Mona;
 }
 
@@ -599,7 +601,7 @@ main {
   font-family: Mona;
 }
 
-.mainTexts>.emailandTrial>p {
+.mainTexts>.emailandTrial>p:first-of-type {
   padding: 14px 24px 16px;
   width: 194px;
   height: 50px;
@@ -614,4 +616,66 @@ main {
   align-items: center;
   cursor: pointer;
   background: linear-gradient(180deg, rgba(183, 52, 179, 0.15) 0%, rgba(164, 46, 156, 0) 100%), #6e40c9
+}
+
+.spliter {
+  width: 1px;
+  height: 50px;
+  background: rgb(48, 54, 61);
+  margin: 0 10px;
+}
+
+.trial {
+  width: 260px;
+  height: 50px;
+  color: #fff;
+  font-weight: 500;
+  padding: 16px 24px;
+  background-color: transparent;
+  border-radius: 6px;
+  box-shadow: #bc8cff 0 0 0 1px inset;
+  transition: 0.3s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.trial>span {
+  transform: translateX(0);
+  font-size: 20px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.trial:hover span {
+  transform: translateX(5px);
+}
+
+.trial:hover {
+  box-shadow: #fff 0 0 0 2px inset;
+}
+
+.trustText {
+  color: rgb(110, 118, 129);
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  margin: 145px 0 20px 0;
+  gap: 5px;
+}
+
+.brands {
+  width: 1075.5px;
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brands>img {
+  height: 44px;
 }
