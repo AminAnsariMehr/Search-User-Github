@@ -64,6 +64,13 @@ function fetchRequest(username) {
       checkEmptyUserWrapper();
       inputSearch.value = "";
     });
+
+  const users = userWrapper.querySelector(".users");
+
+  !users
+    ? (userWrapper.innerHTML +=
+        "<p>User not Found!<br>Please Search again!</p>")
+    : null;
 }
 
 // checkEmpty userWrapper ===>>
@@ -80,7 +87,6 @@ function checkEmptyUserWrapper() {
     ? (line.style.height = "390px")
     : (line.style.height = "750px");
 }
-
 function openCloseUserTab() {
   closeUsersTab.style.width = "62px";
   closeUsersTab.style.right = "-6px";
