@@ -2,14 +2,66 @@ const fakeSearchBar = document.getElementById("fakeSearchBar");
 const realSearchBar = document.getElementById("realSearchBar");
 const exitSearchBarBtn = document.getElementById("exitSearchBar");
 const inputSearch = document.getElementById("inputSearch");
+const form = document.querySelector("form");
 const main = document.querySelector("main");
 const line = document.querySelector(".line");
+const errorBtn = document.querySelector(".errorOk");
+const errorBox = document.querySelector(".errorEmptyInput");
 const userWrapper = document.querySelector(".userWrapper");
 
 //  Events ===>
 fakeSearchBar.addEventListener("click", showSearchBar);
 exitSearchBarBtn.addEventListener("click", closeSearchBar);
-inputSearch.addEventListener("keyup", searchInputValue);
+errorBtn.addEventListener("click", closeErrorBox);
+form.addEventListener("submit", searchInputValue);
+
+// fetchRequest Functions ===>
+function searchInputValue(e) {
+  e.preventDefault();
+  let inputValue = inputSearch.value.trim();
+  inputValue ? fetchRequest(inputValue) : (errorBox.style.left = "50%");
+}
+
+const fetchRequest = async (username) => {
+  const res = await fetch(`https://api.github.com/search/users?q=${username}`);
+  const allUsers = await res.json();
+  renderUser(allUsers);
+};
+
+// render user to Ul
+const renderUser = (allUsers) => {
+  userWrapper.innerHTML = "";
+  userWrapper.innerHTML += `
+  <div id="closeUsersTab">
+  <span id="closeUsersList">&nbsp;</span>
+  <div class="arrowOpen">
+  <img src="./assets/img/RightArrow.png">
+  </div>
+  </div>
+  `;
+
+  for (let i = 0; i < allUsers.items.length; i++) {
+    userWrapper.innerHTML += `
+  <div class="users">
+  <div class="imageUser"><img src=${allUsers.items[i].avatar_url}></div>
+  <p id="userName">${allUsers.items[i].login}</p>
+  <div class="profLinks">
+  <a href=${allUsers.items[i].html_url} target="_blank">More</a>
+  </div>`;
+  }
+  const arrowOpen = document.querySelector(".arrowOpen");
+  const closeUserListBtn = document.getElementById("closeUsersList");
+  arrowOpen.addEventListener("click", openCloseUserTab);
+  closeUserListBtn.addEventListener("click", closeUserList);
+  checkEmptyUserWrapper();
+  inputSearch.value = "";
+};
+
+// closeErrorBox Functions ===>
+function closeErrorBox() {
+  errorBox.style.left = "150%";
+  inputSearch.focus();
+}
 
 // SearchBar Functions ===>
 function showSearchBar() {
@@ -18,59 +70,10 @@ function showSearchBar() {
   document.body.style.opacity = "0.9";
   inputSearch.focus();
 }
-
 function closeSearchBar() {
   checkEmptyUserWrapper();
   realSearchBar.style.display = "none";
   document.body.style.opacity = "1";
-}
-
-// fetchRequest Functions ===>
-function searchInputValue(e) {
-  checkEmptyUserWrapper();
-  if (inputSearch.value && e.key == "Enter") {
-    let inputValue = inputSearch.value;
-    fetchRequest(inputValue);
-  }
-}
-
-function fetchRequest(username) {
-  fetch(`https://api.github.com/search/users?q=${username}`)
-    .then((res) => res.json())
-    .then((allUsers) => {
-      userWrapper.innerHTML = "";
-      userWrapper.innerHTML += `
-      <div id="closeUsersTab">
-      <span id="closeUsersList">&nbsp;</span>
-      <div class="arrowOpen">
-      <img src="./assets/img/RightArrow.png">
-      </div>
-      </div>
-      `;
-
-      for (let i = 0; i < allUsers.items.length; i++) {
-        userWrapper.innerHTML += `
-      <div class="users">
-      <div class="imageUser"><img src=${allUsers.items[i].avatar_url}></div>
-      <p id="userName">${allUsers.items[i].login}</p>
-      <div class="profLinks">
-      <a href=${allUsers.items[i].html_url} target="_blank">More</a>
-      </div>`;
-      }
-      const arrowOpen = document.querySelector(".arrowOpen");
-      const closeUserListBtn = document.getElementById("closeUsersList");
-      arrowOpen.addEventListener("click", openCloseUserTab);
-      closeUserListBtn.addEventListener("click", closeUserList);
-      checkEmptyUserWrapper();
-      inputSearch.value = "";
-    });
-
-  const users = userWrapper.querySelector(".users");
-
-  !users
-    ? (userWrapper.innerHTML +=
-        "<p>User not Found!<br>Please Search again!</p>")
-    : null;
 }
 
 // checkEmpty userWrapper ===>>

@@ -15,9 +15,11 @@
     <header>
 
       <div id="realSearchBar">
-        <div class="searchPart">
-          <img src="./assets/img/icons8-search-30.svg">
-          <input type="text" id="inputSearch" checked>
+        <div class="searchWrapper">
+          <form class="searchPart" action="">
+            <img src="./assets/img/icons8-search-30.svg">
+            <input type="search" id="inputSearch" checked>
+          </form>
         </div>
         <div class="syntaxTips">
           <a href="#">Search syntax tips</a>
@@ -62,8 +64,12 @@
     </header>
 
     <main>
-      <div class="userWrapper"></div>
+      <div class="errorEmptyInput">
+        <p>please write something!</p>
+        <button class="errorOk">OK !</button>
+      </div>
 
+      <div class="userWrapper"></div>
 
       <img class="satelliteImage" src="./assets/img/hero-drone-6f6778300d9b.webp" alt="satelliteImage">
       <img class="LineImage" src="./assets/img/lines-hero-6c09abf3dd42.svg" alt="LineImage">

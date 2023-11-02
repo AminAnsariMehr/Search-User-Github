@@ -35,6 +35,7 @@ body {
   background-position: top center;
   padding-bottom: 50px;
   gap: 45px;
+  overflow-x: hidden;
 }
 
 header {
@@ -164,6 +165,10 @@ header>nav>ul>li>a:hover {
   z-index: 10;
 }
 
+.searchWrapper {
+  padding: 10px 0 10px 10px;
+}
+
 .searchPart,
 .syntaxTips {
   position: relative;
@@ -284,6 +289,47 @@ main {
   justify-content: flex-start;
   align-items: center;
   z-index: 3;
+}
+
+.errorEmptyInput {
+  width: 60%;
+  height: 150px;
+  padding: 25px;
+  background-color: rgb(19, 20, 48);
+  background-color: rgb(14, 16, 37);
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 1),
+    inset 5px 5px 15px rgba(255, 255, 255, 0.2);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 20px;
+  position: absolute;
+  top: 5%;
+  left: 150%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.errorOk {
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6),
+    inset 5px 5px 15px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.errorOk:hover {
+  background: #19772a;
 }
 
 .userWrapper {
